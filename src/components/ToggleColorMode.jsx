@@ -6,7 +6,7 @@ import {Button} from '@chakra-ui/button'
 const ToggleColorMode = () => {
     const {colorMode, toggleColorMode} = useColorMode()
     return (
-        <Button onClick={() => toggleColorMode()} pos="fixed" top={0} right={0} m="1rem" >
+        <Button onClick={() => toggleColorMode()} pos="fixed" top={0} right={0} m="1rem" zIndex="2" >
             {colorMode === 'dark' ? <SunIcon color="orange.400"/> : <MoonIcon color="blue.700"/>}
         </Button>
       )
