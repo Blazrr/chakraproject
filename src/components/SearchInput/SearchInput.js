@@ -26,15 +26,17 @@ function SeachInput() {
   const isError = input === ''
 
   return (
-    <>
-      <FormControl isInvalid={isError}>
+    
+        <>
+      <FormControl isInvalid={isError} className="form-control">
+      <div>
         <FormLabel>Anime Name</FormLabel>
         <Input
           type='email'
           value={input}
           onChange={handleInputChange}
+          width="300px"
         />
-        <Button colorScheme='blue' onClick={handleClick} >Button</Button>
         {!isError ? (
           <FormHelperText>
             Enter the Anime you'd like to retreive informations.
@@ -42,6 +44,8 @@ function SeachInput() {
         ) : (
           <FormErrorMessage>An anime name is required.</FormErrorMessage>
         )}
+        </div>
+        <Button colorScheme='blue' onClick={handleClick} ml="2em" >Button</Button>
       </FormControl>
           <div className='all-cards'>
       {data.map((anime, idx) => {
@@ -58,6 +62,7 @@ function SeachInput() {
         score={anime.score}
         members={anime.members}
         type={anime.type}
+        synopsis={anime.synopsis}
       />
       else return null
       
