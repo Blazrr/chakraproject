@@ -1,9 +1,9 @@
 import React from 'react'
 import { Box, Image, Badge, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button } from '@chakra-ui/react'
-
+import Synopsis from '../Modal/Synopsis'
 function Card(props) {
 
-  const { isOpen, onOpen, onClose } = useDisclosure()
+ 
 
 
   return (
@@ -55,31 +55,9 @@ function Card(props) {
             </Box>
           </Box>
         </Box>
-
-    
-        <Button onClick={onOpen} position='absolute' bottom='0' right='0'>Synopsis</Button>
-      <Modal isOpen={isOpen} onClose={onClose}  size="md">
-        <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>{props.title}</ModalHeader>
-          <ModalCloseButton />
-          <ModalBody>
-            <p>{props.synopsis}</p>
-          </ModalBody>
-
-          <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={onClose}>
-              Close
-            </Button>
-            <Button variant='ghost'>Secondary Action</Button>
-          </ModalFooter>
-        </ModalContent>
-      </Modal>
-
-
-
-
+        <Synopsis synopsis={props.synopsis}/>
       </Box>
+      
 
 
 

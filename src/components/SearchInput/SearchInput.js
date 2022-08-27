@@ -4,6 +4,7 @@ import { FormControl, FormLabel, Input, FormHelperText, FormErrorMessage, Button
 import Card from '../Card/Card.js'
 import './SearchInput.scss'
 import InitialData from '../Data/InitialData.js'
+import Synopsis from '../Modal/Synopsis.js'
 
 
 
@@ -68,6 +69,8 @@ function SeachInput() {
       
       })}
       </div>
+
+      <Synopsis/>
 
     </>
   )
