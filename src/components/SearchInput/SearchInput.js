@@ -53,13 +53,14 @@ function SeachInput() {
             type='email'
             value={input}
             onChange={handleInputChange}
-            width="250px"
+            width="300px"
+            position="relative"
            
 
 
 
           />
-          {searching ? <Spinner ml="1em"  /> : null }
+          {searching ? <Spinner ml="1em"  position="absolute" mt=".5em"/> : null }
           </Box>
           {!isError ? (
             <FormHelperText>
