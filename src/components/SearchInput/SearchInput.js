@@ -3,6 +3,8 @@ import { useState,useEffect } from 'react'
 import { FormControl, FormLabel, Input, FormHelperText, FormErrorMessage, Button } from '@chakra-ui/react'
 import Card from '../Card/Card.js'
 import './SearchInput.scss'
+import InitialData from '../Data/InitialData.js'
+
 
 
 
@@ -10,7 +12,7 @@ function SeachInput() {
   const [input, setInput] = useState('')
   
 
-  const [data, updateData] = useState([]);
+  const [data, updateData] = useState(InitialData);
   
 
   const handleInputChange = (e) => setInput(e.target.value)
