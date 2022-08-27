@@ -11,8 +11,8 @@ function Card(props) {
 
 
 
-      <Box maxW='sm' borderWidth='1px' borderRadius='lg' overflow='hidden' width='300px' ml="1em" mr='1em' position='relative'>
-        <Image src={props.image} alt={props.alt} width='100%' />
+      <Box  borderWidth='1px' borderRadius='lg' overflow='hidden'  ml="1em" mr='1em' position='relative' width="300px"  mt='2em'>
+        <Image src={props.image} alt={props.alt} width='300px' />
 
         <Box p='6'>
           <Box display='flex' alignItems='baseline' >
@@ -55,7 +55,7 @@ function Card(props) {
             </Box>
           </Box>
         </Box>
-        <Synopsis synopsis={props.synopsis}/>
+        <Synopsis synopsis={props.synopsis} url={props.url}/>
       </Box>
       
 
