@@ -55,7 +55,7 @@ function Card(props) {
             </Box>
           </Box>
         </Box>
-        <Synopsis synopsis={props.synopsis} url={props.url}/>
+        <Synopsis synopsis={props.synopsis} url={props.url} title={props.title} episodes={props.episodes} duration={props.duration} trailerurl={props.trailerurl}/>
       </Box>
       
 

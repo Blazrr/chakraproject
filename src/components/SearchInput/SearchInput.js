@@ -4,6 +4,7 @@ import { FormControl, FormLabel, Input, FormHelperText, FormErrorMessage, Button
 import Card from '../Card/Card.js'
 import InitialData from '../Data/InitialData.js'
 import Synopsis from '../Modal/Synopsis.js'
+import { animateVisualElement } from 'framer-motion'
 
 
 
@@ -90,6 +91,7 @@ function SeachInput() {
           anime.idx = idx
           if (anime.rank != '0' && anime.synopsis != null && anime.type !== "Music")
             return <Card
+            
               key={idx}
               title={anime.title}
               image={anime.images.jpg.large_image_url}
@@ -101,6 +103,9 @@ function SeachInput() {
               type={anime.type}
               synopsis={anime.synopsis}
               url={anime.url}
+              episodes={anime.episodes}
+              duration={anime.duration}
+              trailerurl={anime.trailer.embed_url}
             />
           else return null
 

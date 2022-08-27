@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button } from '@chakra-ui/react'
+import { useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button, Text } from '@chakra-ui/react'
 
 function Synopsis(props) {
 
@@ -11,10 +11,13 @@ function Synopsis(props) {
             <Modal isOpen={isOpen} onClose={onClose} size="full">
                 <ModalOverlay />
                 <ModalContent>
-                    <ModalHeader>Modal Title</ModalHeader>
+                    <ModalHeader>{props.title}</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
-                        <p>{props.synopsis}</p>
+                    <Text fontSize='2xl'>{props.episodes} episodes of {props.duration}</Text>
+                        <Text mt="1em">{props.synopsis}</Text>
+
+                        <iframe width="560" height="315" src={props.trailerurl} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </ModalBody>
 
                     <ModalFooter>
