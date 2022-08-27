@@ -14,6 +14,7 @@ function SeachInput() {
   const [searching, setSearching] = useState(false)
   const isError = input === ''
   const handleInputChange = (e) => setInput(e.target.value)
+  const [word, setWord] = useState('')
 
 
 
@@ -29,6 +30,7 @@ function SeachInput() {
         updateData(res.data.data)
         console.log(data)
         setSearching(false)
+        setWord(input)
       
 
 
@@ -45,7 +47,7 @@ function SeachInput() {
   return (
 
     <>
-      <FormControl isInvalid={isError} className="form-control" w="80%" ml='auto' mr="auto" display='flex' flexDirection="column" alignItems="center" justifyContent="center">
+      <FormControl isInvalid={isError} className="form-control" w="80%" ml='auto' mr="auto" display='flex' flexDirection="column" alignItems="center" justifyContent="center" mt="2em">
         <Box >
           <FormLabel>Anime Name</FormLabel>
       <Box>
@@ -80,13 +82,13 @@ function SeachInput() {
 
       {data.length ==0 ? <Alert status='error' w="50%" borderRadius='lg' margin="auto" mt="2em" minW="300px">
         <AlertIcon />
-        There was an error processing your request
+        There was no result found for {word}
       </Alert> : null}
 
       <Box display="flex" flexWrap='wrap' alignItems='center' justifyContent='center'>
         {data.map((anime, idx) => {
           anime.idx = idx
-          if (anime.rank != '0' && anime.synopsis != null)
+          if (anime.rank != '0' && anime.synopsis != null && anime.type !== "Music")
             return <Card
               key={idx}
               title={anime.title}
