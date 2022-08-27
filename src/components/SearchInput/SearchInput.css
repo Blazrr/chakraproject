@@ -1,0 +1,13 @@
+.all-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2em;
+}
+
+.form-control {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}/*# sourceMappingURL=SearchInput.css.map */
