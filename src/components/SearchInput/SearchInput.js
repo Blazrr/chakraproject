@@ -82,9 +82,10 @@ function SeachInput() {
         There was no result found for {word}, try another name
       </Alert> : null}
 
-      <Box display="flex" flexWrap='wrap' alignItems='center' justifyContent='center'>
+      <Box display="flex" flexWrap='wrap' alignItems='bottom' justifyContent='center'>
         {data.map((anime, idx) => {
           anime.idx = idx
+          console.log(anime)
           if (anime.rank != '0' && anime.synopsis != null && anime.type !== "Music" && anime.trailer.embed_url !== null) {
 
             return <Card
