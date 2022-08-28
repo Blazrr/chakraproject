@@ -1,6 +1,6 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
-import { FormControl, FormLabel, Input, FormHelperText, FormErrorMessage, Button, Spinner, Box, Alert, AlertIcon } from '@chakra-ui/react'
+import { FormControl, FormLabel, Input, FormHelperText, FormErrorMessage, Button, Spinner, Box, Alert, AlertIcon, Badge } from '@chakra-ui/react'
 import Card from '../Card/Card.js'
 import InitialData from '../Data/InitialData.js'
 import Synopsis from '../Modal/Synopsis.js'
@@ -32,7 +32,7 @@ function SeachInput() {
         console.log(data)
         setSearching(false)
         setWord(input)
-      
+
 
 
       }).catch(err => {
@@ -51,19 +51,15 @@ function SeachInput() {
       <FormControl isInvalid={isError} className="form-control" w="80%" ml='auto' mr="auto" display='flex' flexDirection="column" alignItems="center" justifyContent="center" mt="2em">
         <Box >
           <FormLabel>Anime Name</FormLabel>
-      <Box>
-          <Input
-            type='email'
-            value={input}
-            onChange={handleInputChange}
-            width="300px"
-            position="relative"
-           
-
-
-
-          />
-          {searching ? <Spinner ml="1em"  position="absolute" mt=".5em"/> : null }
+          <Box>
+            <Input
+              type='email'
+              value={input}
+              onChange={handleInputChange}
+              width="300px"
+              position="relative"
+            />
+            {searching ? <Spinner ml="1em" position="absolute" mt=".5em" /> : null}
           </Box>
           {!isError ? (
             <FormHelperText>
@@ -76,12 +72,12 @@ function SeachInput() {
         </Box>
 
 
-        
+
         <Button colorScheme='blue' onClick={handleClick} w="200px" mt="1em" >retreive Infos</Button>
       </FormControl>
 
 
-      {data.length ==0 ? <Alert status='error' w="50%" borderRadius='lg' margin="auto" mt="2em" minW="300px">
+      {data.length == 0 ? <Alert status='error' w="50%" borderRadius='lg' margin="auto" mt="2em" minW="300px">
         <AlertIcon />
         There was no result found for {word}
       </Alert> : null}
@@ -89,9 +85,10 @@ function SeachInput() {
       <Box display="flex" flexWrap='wrap' alignItems='center' justifyContent='center'>
         {data.map((anime, idx) => {
           anime.idx = idx
-          if (anime.rank != '0' && anime.synopsis != null && anime.type !== "Music")
+          if (anime.rank != '0' && anime.synopsis != null && anime.type !== "Music" && anime.trailer.embed_url !== null) {
+
             return <Card
-            
+
               key={idx}
               title={anime.title}
               image={anime.images.jpg.large_image_url}
@@ -106,7 +103,14 @@ function SeachInput() {
               episodes={anime.episodes}
               duration={anime.duration}
               trailerurl={anime.trailer.embed_url}
+              themesInsideArrays={anime.genres}
+              theThemes={anime.genres.name}
+              myFunction={anime.genres.map((genre, id) => {
+                genre.id = id
+                return <Box ml='1em' > <a href={genre.url} target="_blank" key={id}><Badge  fontSize={[ '17px','17px' ,'17px','22px','30px' ]} colorScheme='red' >{genre.name}</Badge> </a> </Box>
+              })}
             />
+          }
           else return null
 
         })}
