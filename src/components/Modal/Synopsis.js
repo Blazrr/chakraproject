@@ -7,7 +7,7 @@ function Synopsis(props) {
 
     return (
         <div>
-            <Button onClick={onOpen}>Open Modal</Button>
+            <Button borderRadius='none' onClick={onOpen}>More info</Button>
             <Modal isOpen={isOpen} onClose={onClose} size="full">
                 <ModalOverlay />
                 <ModalContent>
