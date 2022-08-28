@@ -14,6 +14,7 @@ function SeachInput() {
   const [data, updateData] = useState(InitialData);
   const [searching, setSearching] = useState(false)
   const isError = input === ''
+  const [noResult, setNoResult] = useState(false)
   const handleInputChange = (e) => setInput(e.target.value)
   const [word, setWord] = useState('')
 
@@ -29,22 +30,21 @@ function SeachInput() {
 
       .then(res => {
         updateData(res.data.data)
-        console.log(data)
+        
         setSearching(false)
         setWord(input)
-
-
-
       }).catch(err => {
-        console.log(err)
-        console.log("no data found");
+       
       });
-
-
   }
 
 
 
+  
+  const filtered =   data.filter(objet => {
+    return !(objet.rank != '0' && objet.synopsis != null && objet.type !== "Music" && objet.trailer.embed_url !== null) ;
+  });
+  
   return (
 
     <>
@@ -77,7 +77,7 @@ function SeachInput() {
       </FormControl>
 
 
-      {data.length == 0 ? <Alert status='error' w="50%" borderRadius='lg' margin="auto" mt="2em" minW="300px">
+      {data.length == filtered.length  ? <Alert status='error' w="50%" borderRadius='lg' margin="auto" mt="2em" minW="300px">
         <AlertIcon />
         There was no result found for {word}, try another name
       </Alert> : null}
@@ -107,7 +107,7 @@ function SeachInput() {
               theThemes={anime.genres.name}
               myFunction={anime.genres.map((genre, id) => {
                 genre.id = id
-                return <Box ml='1em' > <a href={genre.url} target="_blank" key={id} ><Badge   fontSize={[ '15px','15px' ,'17px','22px','25px' ]} colorScheme='red' >{genre.name}</Badge> </a> </Box>
+                return <Box ml='1em' key={id} > <a href={genre.url} target="_blank" key={id} ><Badge   fontSize={[ '15px','15px' ,'17px','22px','25px' ]} colorScheme='red' >{genre.name}</Badge> </a> </Box>
               })}
             />
           }
