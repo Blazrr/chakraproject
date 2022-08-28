@@ -13,7 +13,7 @@ function Header() {
         <Text
   bgGradient='linear(to-l, #7928CA, #FF0080)'
   bgClip='text'
-  fontSize='5xl'
+  fontSize='4xl'
   fontWeight='extrabold'
   textAlign="center"
   

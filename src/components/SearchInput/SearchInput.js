@@ -79,7 +79,7 @@ function SeachInput() {
 
       {data.length == 0 ? <Alert status='error' w="50%" borderRadius='lg' margin="auto" mt="2em" minW="300px">
         <AlertIcon />
-        There was no result found for {word}
+        There was no result found for {word}, try another name
       </Alert> : null}
 
       <Box display="flex" flexWrap='wrap' alignItems='center' justifyContent='center'>
@@ -107,7 +107,7 @@ function SeachInput() {
               theThemes={anime.genres.name}
               myFunction={anime.genres.map((genre, id) => {
                 genre.id = id
-                return <Box ml='1em' > <a href={genre.url} target="_blank" key={id}><Badge  fontSize={[ '17px','17px' ,'17px','22px','30px' ]} colorScheme='red' >{genre.name}</Badge> </a> </Box>
+                return <Box ml='1em' > <a href={genre.url} target="_blank" key={id} ><Badge   fontSize={[ '15px','15px' ,'17px','22px','25px' ]} colorScheme='red' >{genre.name}</Badge> </a> </Box>
               })}
             />
           }
