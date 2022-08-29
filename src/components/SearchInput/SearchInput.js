@@ -63,7 +63,7 @@ function SeachInput() {
           </Box>
           {!isError ? (
             <FormHelperText>
-              Enter the Anime you'd like to retreive informations.
+              Enter the Anime you'd like to retrieve informations.
             </FormHelperText>
           ) : (
             <FormErrorMessage>An anime name is required.</FormErrorMessage>
