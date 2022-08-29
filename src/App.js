@@ -4,13 +4,13 @@ import Header from './components/Header/Header';
 import SignIn from './components/Sign/SignIn';
 import SignOut from './components/Sign/SignOut';
 
-import firebase from 'firebase/compat/app'
-import 'firebase/compat/firestore'
-import 'firebase/compat/auth'
+// import firebase from 'firebase/compat/app'
+// import 'firebase/compat/firestore'
+// import 'firebase/compat/auth'
 
 
-import{useCollectionData} from 'react-firebase-hooks/firestore'
-import {useAuthState} from 'react-firebase-hooks/auth'
+// import{useCollectionData} from 'react-firebase-hooks/firestore'
+// import {useAuthState} from 'react-firebase-hooks/auth'
 
 
 
