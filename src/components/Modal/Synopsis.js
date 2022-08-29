@@ -8,7 +8,7 @@ function Synopsis(props) {
     return (
         <div>
             <Button borderRadius='none' borderTopRightRadius='lg' position="absolute" bottom="0" left="0" onClick={onOpen}>More info</Button>
-            <Modal isOpen={isOpen} onClose={onClose} size="full" allowPinchZoom={false} >
+            <Modal isOpen={isOpen} onClose={onClose} size="full" allowPinchZoom={true} >
                 <ModalOverlay />
                 <ModalContent>
                     

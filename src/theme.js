@@ -5,6 +5,15 @@ const theme = {
         initialColorMode: "dark",
         useSystemColorMode: true,      
     },
+    components: {
+        Modal: {
+          baseStyle: {
+            dialogContainer: {
+              "@supports(height: -webkit-fill-available)": {},
+            },
+          },
+        },
+      },
    
 }
 export default extendTheme(theme)
