@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button, Text, AspectRatio, Box } from '@chakra-ui/react'
+import { useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button, Text, Box } from '@chakra-ui/react'
 
 function Synopsis(props) {
 
@@ -32,7 +32,7 @@ function Synopsis(props) {
                         <Button colorScheme='blue' mr={3} onClick={onClose}>
                             Close
                         </Button>
-                        <a href={props.url} target="_blank" >  <Button colorScheme='green'> MyAnimeList</Button></a>
+                        <a href={props.url}  >  <Button colorScheme='green'> MyAnimeList</Button></a>
                     </ModalFooter>
                 </ModalContent>
             </Modal >

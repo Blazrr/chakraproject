@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Image, Badge, useDisclosure, Modal, ModalOverlay, ModalContent, ModalHeader, ModalCloseButton, ModalBody, ModalFooter, Button } from '@chakra-ui/react'
+import { Box, Image, Badge } from '@chakra-ui/react'
 import Synopsis from '../Modal/Synopsis'
 function Card(props) {
 
